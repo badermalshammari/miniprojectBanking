@@ -10,7 +10,7 @@ import java.time.LocalDate
 @RequestMapping("/api/kyc")
 class KycController(private val kycServices: KYCServices) {
 
-    @PostMapping
+    @PostMapping("/create")
     fun createKyc(@RequestBody req: KycRequest): KYC {
         return kycServices.createProfile(
             userId = req.userId,
@@ -21,7 +21,7 @@ class KycController(private val kycServices: KYCServices) {
         )
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     fun getAllKycProfiles(): List<KYC> {
         return kycServices.getAllProfiles()
     }

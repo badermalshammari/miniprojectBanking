@@ -26,7 +26,7 @@ class AccountController(private val accountService: AccountService) {
     fun getUserAccounts(@PathVariable userId: Long): List<Account> =
         accountService.getUserAccounts(userId)
 
-    @GetMapping("/v1/accounts")
+    @GetMapping("/v1/getallaccounts")
     fun getAllAccounts(): Map<String, List<Account>> {
         val allAccounts = accountService.getAllAccounts()
         return mapOf("accounts" to allAccounts)
