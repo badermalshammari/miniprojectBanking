@@ -5,6 +5,6 @@ Feature: Login functionality with JWT authentication
     Then the login response status should be 403
 
   Scenario: Register then login successfully
-    When I register a new user with username "newuser" and password "Secure123@"
+    When register a new user with username "newuser" and password "Secure123@"
     Then the login response status should be 200
     And the response should contain a JWT token

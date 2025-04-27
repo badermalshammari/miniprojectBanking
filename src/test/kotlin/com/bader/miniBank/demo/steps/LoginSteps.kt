@@ -53,7 +53,7 @@ class LoginSteps {
         println("Response Body: ${response?.body}")
     }
 
-    @When("I register a new user with username {string} and password {string}")
+    @When("register a new user with username {string} and password {string}")
     fun registerBeforeLogin(username: String, password: String) {
         println("Creating user $username before login")
         val request = RegisterRequest(username, password)

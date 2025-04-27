@@ -11,7 +11,7 @@ data class TransferRequest(val fromAccountId: Long, val toAccountId: Long, val a
 @RequestMapping("/api/transfer")
 class TransactionController(private val transactionsServices: TransactionsServices) {
 
-    @PostMapping
+    @PostMapping("/v1/transfer")
     fun transfer(@RequestBody req: TransferRequest): Transaction {
         return transactionsServices.transfer(req.fromAccountId, req.toAccountId, req.amount)
     }
