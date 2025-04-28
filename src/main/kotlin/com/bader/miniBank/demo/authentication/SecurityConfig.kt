@@ -30,7 +30,7 @@ class SecurityConfig(
                 it
                     .requestMatchers("/auth/**").permitAll()
                     .requestMatchers("/api/users/register").permitAll()
-                    .anyRequest().authenticated()
+                    .anyRequest().permitAll()
             }
             .sessionManagement {
                 it.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
